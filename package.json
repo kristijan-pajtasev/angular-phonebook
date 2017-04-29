@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kristijan-pajtasev/angular-phonebook/issues"
   },
-  "homepage": "https://github.com/kristijan-pajtasev/angular-phonebook#readme"
+  "homepage": "https://github.com/kristijan-pajtasev/angular-phonebook#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
