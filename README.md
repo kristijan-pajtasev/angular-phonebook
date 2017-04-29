@@ -1,2 +1,2 @@
 # angular-phonebook
-Small coding exercise
+Small coding exercise in angular.
