@@ -16,4 +16,4 @@ class PhonebookService {
     }
 }
 
-angular.module("Phonebook").service("PhonebookService", PhonebookService);
+angular.module("phonebook").service("PhonebookService", PhonebookService);
