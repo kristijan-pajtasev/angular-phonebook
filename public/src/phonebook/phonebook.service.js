@@ -5,7 +5,7 @@ class PhonebookService {
     }
 
     getAll(res, rej) {
-        $http.get("mocks/phonebook.json").then((data) => {
+        $http.get("phonebook").then((data) => {
             res(data.data);
         });
     }
