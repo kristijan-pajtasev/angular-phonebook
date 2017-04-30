@@ -11,12 +11,12 @@ app.get("/phonebook/:id", (request, response) => {
         response.status(404);
         response.send("Contact not found");
     } else {
-        response.send(phonebook);
+        response.json(phonebook);
     }
 });
 
 app.get("/phonebook", (request, response) => {
-    response.send(phonebook);
+    response.json(phonebook);
 });
 
 app.listen(3000, function () {
