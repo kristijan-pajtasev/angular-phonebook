@@ -4,8 +4,11 @@
       <link href="assets/index.css" rel="stylesheet" />
     </head>
     <body ng-app="phonebook">
+
+        <div ng-include="'assets/views/phonebook/phonebook.html'"></div>
         <script src="lib/angular.js"></script>
         <script src="src/app.js"></script>
+
         <script src="src/phonebook/phonebook.module.js"></script>
         <script src="src/phonebook/phonebook.service.js"></script>
         <script src="src/phonebook/phonebook.controller.js"></script>
