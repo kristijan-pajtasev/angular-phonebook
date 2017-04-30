@@ -11,10 +11,10 @@ class PhonebookService {
     }
 
     get(id, res, rej) {
-        $http.get("mocks/phonebook.json").then((data) => {
-            let contact = data.data.filter(e => e.id === id)[0];
-            if(!contact) rej(`Contact with ${id} does not exist.`);
-            else res(contact);
+        $http.get(`phonebook/${id}`).then((data) => {
+            res(data.data);
+        }, () => {
+            rej(`Contact with ${id} does not exist.`);
         });
     }
 }
