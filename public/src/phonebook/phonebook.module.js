@@ -1,4 +1,4 @@
-angular.module('phonebook', []);
+angular.module('phonebook', [])
 
-.controller("PhonebookControoler", ["Phonebook", function(PhonebookService) {}])
+.controller("PhonebookControoler", ["PhonebookService", function(PhonebookService) {}])
 });
