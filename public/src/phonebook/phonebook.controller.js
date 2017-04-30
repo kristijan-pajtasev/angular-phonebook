@@ -1,4 +1,4 @@
-angular.module('phonebook').controller("PhonebookController", ["PhonebookService", function(PhonebookService) {
-    $scope.Name = PhonebookService
+angular.module('phonebook').controller("PhonebookController", ["PhonebookService", "$scope", function(PhonebookService, $scope) {
+    $scope.Name = "test"
     console.log(PhonebookService)
 }]);
