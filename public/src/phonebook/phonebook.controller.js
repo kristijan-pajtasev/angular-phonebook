@@ -1,20 +1,19 @@
-angular.module('phonebook').controller("PhonebookController", ["PhonebookService", "$scope", "$http", function(PhonebookService, $scope, $http) {
+angular.module('phonebook').controller("PhonebookController", ["PhonebookService", "$scope", function(PhonebookService, $scope) {
     PhonebookService.getAll(jsonData => {
         $scope.contacts = jsonData;
     });
 
     $scope.postContact = function (firstName, lastName, phoneNumber) {
-    var data = {
+    var contactData = {
         firstName: firstName,
         lastName: lastName,
         phoneNumber: phoneNumber
     };
 
-    $http.post('/phonebook', JSON.stringify(data)).then(function (response) {
-        if (response.data)
-            $scope.msg = "Post Data Submitted Successfully!";
-        }, function (response) {
-            $scope.msg = "Service does not exist";
+    PhonebookService.postContact(contactData, res => {
+            $scope.msg = res;
+        }, rej => {
+            $scope.msg = rej;
         });
     };
 }]);
