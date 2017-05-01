@@ -18,7 +18,7 @@ class PhonebookService {
         });
     }
 
-    postContact(data, res, rej) {
+    save(data, res, rej) {
         $http.post('/phonebook', data).then(
             postResponse => {
                 if (postResponse.data) { res("Post Data Submitted Successfully!"); }

@@ -1,19 +1,24 @@
 angular.module('phonebook').controller("PhonebookController", ["PhonebookService", "$scope", function(PhonebookService, $scope) {
-    PhonebookService.getAll(jsonData => {
-        $scope.contacts = jsonData;
-    });
+    $scope.model = {};
 
-    $scope.postContact = function (firstName, lastName, phoneNumber) {
-    var contactData = {
-        firstName: firstName,
-        lastName: lastName,
-        phoneNumber: phoneNumber
-    };
+    getContacts();
 
-    PhonebookService.postContact(contactData, res => {
+    $scope.postContact = function () {
+
+        let contactData = $scope.model;
+
+        PhonebookService.save(contactData, res => {
             $scope.msg = res;
+            $scope.model = {};
+            getContacts();
         }, rej => {
             $scope.msg = rej;
         });
     };
+
+    function getContacts() {
+        PhonebookService.getAll(jsonData => {
+            $scope.contacts = jsonData;
+        });
+    }
 }]);
