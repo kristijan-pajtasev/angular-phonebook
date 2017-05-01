@@ -1,0 +1,22 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+.phonebook .contacts {
+    list-style: none;
+    padding: 8px;
+}
+
+.phonebook .contacts .contact {
+    border-bottom: thin solid #ccc;
+    padding: 4px;
+}
+
+.phonebook .contacts .contact:hover {
+    background: #fafafa;
+}
+
+.phonebook .contacts .contact .phonenumber {
+    font-size: 12px;
+}
