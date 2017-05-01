@@ -29,7 +29,7 @@ app.post("/phonebook", (request, response) => {
     request.body.id = id
     phonebook.push(request.body)
 
-    response.send("OK");
+    response.send(request.body);
 });
 
 app.listen(3000, function () {

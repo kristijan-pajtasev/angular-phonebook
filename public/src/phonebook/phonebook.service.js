@@ -21,7 +21,7 @@ class PhonebookService {
     save(data, res, rej) {
         $http.post('/phonebook', data).then(
             postResponse => {
-                if (postResponse.data) { res("Post Data Submitted Successfully!"); }
+                if (postResponse.data) { res("Save data with ID: " + JSON.stringify(postResponse.data.id)); }
             },
             postResponse => {
                 rej("Service does not exist");
