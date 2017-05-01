@@ -17,6 +17,15 @@ class PhonebookController {
         });
     };
 
+    showForm() {
+        this.show = true;
+    }
+
+    hideForm() {
+        this.model = {};
+        this.show = false;
+    }
+
     getContacts() {
         let _this = this;
         this.PhonebookService.getAll(jsonData => {

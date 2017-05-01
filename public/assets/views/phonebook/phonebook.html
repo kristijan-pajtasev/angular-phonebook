@@ -1,4 +1,7 @@
 <div ng-controller="PhonebookController as pb" class="phonebook">
+    <div>
+        <button ng-click="pb.showForm()">add contact</button>
+    </div>
     <ul class="contacts">
         <li ng-repeat="contact in pb.contacts" class="contact">
             <div class="name">{{contact.lastName}}, {{contact.firstName}}</div>
@@ -6,10 +9,13 @@
         </li>
     </ul>
 
-    <p>First Name: <input type="text" name="firstName" ng-model="pb.model.firstName" required /></p>
-    <p>Last Name: <input type="text" name="lastName" ng-model="pb.model.lastName" required /></p>
-    <p>Phone number: <input type="text" name="phoneNumber" ng-model="pb.model.phoneNumber" required /></p>
-    <input type="button" value="Send" ng-click="pb.postContact()" /> <br/><br/>
-    <p>Output Message : {{msg}}</p>
+    <div ng-if="pb.show">
+        <button ng-click="pb.hideForm()">close form</button>
 
+        <p>First Name: <input type="text" name="firstName" ng-model="pb.model.firstName" required /></p>
+        <p>Last Name: <input type="text" name="lastName" ng-model="pb.model.lastName" required /></p>
+        <p>Phone number: <input type="text" name="phoneNumber" ng-model="pb.model.phoneNumber" required /></p>
+        <input type="button" value="Send" ng-click="pb.postContact()" /> <br/><br/>
+        <p>Output Message : {{msg}}</p>
+    </div>
 </div>
