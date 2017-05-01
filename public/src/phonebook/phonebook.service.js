@@ -18,13 +18,14 @@ class PhonebookService {
         });
     }
 
-    postContact(data, res, rej) {
-        $http.post('/phonebook', JSON.stringify(data)).then(function (postResponse) {
-            if (postResponse.data)
-                res = "Post Data Submitted Successfully!";
-            }, function (postResponse) {
+    save(data, res, rej) {
+        $http.post('/phonebook', data).then(
+            postResponse => {
+                if (postResponse.data) { res("Post Data Submitted Successfully!"); }
+            },
+            postResponse => {
                 rej("Service does not exist");
-        });
+            });
     }
 }
 
