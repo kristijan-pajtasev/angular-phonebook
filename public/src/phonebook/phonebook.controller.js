@@ -1,4 +1,5 @@
 angular.module('phonebook').controller("PhonebookController", ["PhonebookService", "$scope", function(PhonebookService, $scope) {
-    $scope.Name = "test"
-    console.log(PhonebookService)
+    PhonebookService.getAll(data => {
+        $scope.Data = data;
+    });
 }]);
