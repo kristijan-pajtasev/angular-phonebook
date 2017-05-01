@@ -1,9 +1,9 @@
 <div ng-controller="PhonebookController">
     <table border="1">
-        <tr ng-repeat="i in Data">
-        <td>{{i.id}}</td>
-        <td>{{i.firstName}}</td>
-        <td>{{i.lastName}}</td>
-        <td>{{i.phoneNumber}}</td></tr>
+        <tr ng-repeat="contact in Contacts">
+        <td>{{contact.id}}</td>
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.phoneNumber}}</td></tr>
     </table>
 </div>
