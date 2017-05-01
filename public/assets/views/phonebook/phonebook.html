@@ -5,4 +5,11 @@
             <div class="phonenumber">{{contact.phoneNumber}}</div>
         </li>
     </ul>
+
+    <p>First Name: <input type="text" name="firstName" ng-model="firstName" required /></p>
+    <p>Last Name: <input type="text" name="lastName" ng-model="lastName" required /></p>
+    <p>Phone number: <input type="text" name="phoneNumber" ng-model="phoneNumber" required /></p>
+    <input type="button" value="Send" ng-click="postContact(firstName, lastName, phoneNumber)" /> <br/><br/>
+    <p>Output Message : {{msg}}</p>
+
 </div>
