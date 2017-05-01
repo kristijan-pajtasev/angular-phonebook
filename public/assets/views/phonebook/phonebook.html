@@ -1,15 +1,15 @@
-<div ng-controller="PhonebookController" class="phonebook">
+<div ng-controller="PhonebookController as pb" class="phonebook">
     <ul class="contacts">
-        <li ng-repeat="contact in contacts" class="contact">
+        <li ng-repeat="contact in pb.contacts" class="contact">
             <div class="name">{{contact.lastName}}, {{contact.firstName}}</div>
             <div class="phonenumber">{{contact.phoneNumber}}</div>
         </li>
     </ul>
 
-    <p>First Name: <input type="text" name="model.firstName" ng-model="model.firstName" required /></p>
-    <p>Last Name: <input type="text" name="model.lastName" ng-model="model.lastName" required /></p>
-    <p>Phone number: <input type="text" name="model.phoneNumber" ng-model="model.phoneNumber" required /></p>
-    <input type="button" value="Send" ng-click="postContact(firstName, lastName, phoneNumber)" /> <br/><br/>
+    <p>First Name: <input type="text" name="firstName" ng-model="pb.model.firstName" required /></p>
+    <p>Last Name: <input type="text" name="lastName" ng-model="pb.model.lastName" required /></p>
+    <p>Phone number: <input type="text" name="phoneNumber" ng-model="pb.model.phoneNumber" required /></p>
+    <input type="button" value="Send" ng-click="pb.postContact()" /> <br/><br/>
     <p>Output Message : {{msg}}</p>
 
 </div>

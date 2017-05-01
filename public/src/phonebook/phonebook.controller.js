@@ -1,24 +1,30 @@
-angular.module('phonebook').controller("PhonebookController", ["PhonebookService", "$scope", function(PhonebookService, $scope) {
-    $scope.model = {};
+class PhonebookController {
+    constructor(PhonebookService, $scope) {
+        this.model = {};
+        this.PhonebookService = PhonebookService;
+        this.getContacts();
+    }
 
-    getContacts();
-
-    $scope.postContact = function () {
-
-        let contactData = $scope.model;
-
-        PhonebookService.save(contactData, res => {
-            $scope.msg = res;
-            $scope.model = {};
-            getContacts();
+    postContact () {
+        let contactData = this.model;
+        let _this = this;
+        this.PhonebookService.save(contactData, res => {
+            _this.msg = res;
+            _this.model = {};
+            _this.getContacts();
         }, rej => {
-            $scope.msg = rej;
+            _this.msg = rej;
         });
     };
 
-    function getContacts() {
-        PhonebookService.getAll(jsonData => {
-            $scope.contacts = jsonData;
+    getContacts() {
+        let _this = this;
+        this.PhonebookService.getAll(jsonData => {
+            _this.contacts = jsonData;
         });
     }
-}]);
+}
+
+PhonebookController.$inject = ["PhonebookService", "$scope"];
+
+angular.module('phonebook').controller("PhonebookController", PhonebookController);
